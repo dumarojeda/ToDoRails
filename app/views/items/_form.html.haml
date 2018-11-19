@@ -1,0 +1,5 @@
+= form_with(model: item) do |f|
+  .form-group
+    = f.text_field :title
+    = f.hidden_field :state, value: 'false'
+  = f.submit class: 'btn btn-primary'

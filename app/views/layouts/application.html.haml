@@ -8,5 +8,12 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    .container
-      = yield
+    #wrapper-header
+      %nav.navbar.navbar-expand-lg.navbar-light.bg-light
+        .container
+          = link_to "ToDo Rails", root_path, {class: 'navbar-brand mr-auto'}
+          = link_to "New Item", new_item_path, {class: 'btn btn-outline-success my-2 my-lg-0'}
+
+    #wrapper-main
+      .container
+        = yield

@@ -1,0 +1,11 @@
+%ul.list-group
+  - @items.each do |item|
+    %li.list-group-item
+      = form_for item, url: item_path(item) do |f|
+        = f.hidden_field :state, value: 'true'
+        = f.submit
+      = "#{item.title} #{item.state}"
+      = link_to edit_item_path(item) do
+        %i.fas.fa-pen
+      = link_to item, method: :delete, data: { confirm: 'Are you sure?'} do
+        %i.fas.fa-trash
